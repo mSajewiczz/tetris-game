@@ -1,3 +1,0 @@
-/Users/mikolajsajewicz/Documents/my-code-base/cpp/tetris-game/cmake-build-debug/CMakeFiles/tetris_game.dir
-/Users/mikolajsajewicz/Documents/my-code-base/cpp/tetris-game/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/mikolajsajewicz/Documents/my-code-base/cpp/tetris-game/cmake-build-debug/CMakeFiles/rebuild_cache.dir

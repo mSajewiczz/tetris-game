@@ -1,7 +1,6 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include <X11/Xlib.h>
 #include <ncurses.h>
 
 #include "shape.h"
