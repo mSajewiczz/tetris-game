@@ -119,11 +119,15 @@ void Shape::ResetShape()
     }
 }
 
-void Shape::PrintShape()
+void Shape::PrintShape(int distanceX)
 {
     for (int i = 0; i < 4; i++)
     {
-        for (int j =0; j < 4; j++)
+        for (int j = 0; j < distanceX; j++)
+        {
+            cout << ' ';
+        }
+        for (int j = 0; j < 4; j++)
         {
             if (CurrPattern[i][j] == '*')
             {
@@ -141,7 +145,7 @@ void Shape::PrintShape()
     Rotation formula for a 4x4 grid indexed from 0
     prevY = y
     y = x
-    x = abs(prevY - 3)
+    x = abs(prevY - MAXINDEX)
 
     INDEXED FROM 0 4X4 GRID ROTATION FORMULA
 */

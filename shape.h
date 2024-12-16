@@ -29,6 +29,6 @@ public:
     Shape();
     Shape(int type);
 
-    void PrintShape();
+    void PrintShape(int distanceX = 0);
     void Rotate();
 };

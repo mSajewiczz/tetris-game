@@ -1,9 +1,10 @@
 #include <iostream>
-#include "shape.h"
 #include <chrono>
 #include <thread>
-#include <X11/Xlib.h>
+#include <ncurses.h>
 
+#include "shape.h"
+#include "player.h"
 #define ClearConsole    system("clear")// clear the console
 #define Wait(x)         this_thread::sleep_for(chrono::milliseconds(x)) // waits for 1000 ms
 #define Now             system_clock::now()
@@ -28,32 +29,46 @@ bool TimePassed(long int time)
     return false;
 }
 
-
+bool MoveDownPlayer(Player &gracz)
+{
+    if (TimePassed(1000))
+    {
+        ClearConsole;
+        gracz.Fall();
+        gracz.PrintPlayer();
+    }
+    return true;
+}
 int main()
 {
     system("tput civis"); // makes the cursor invisible so it won't interfere with the game looks
     ClearConsole;
-    Shape test(STRAIGHT);
+    Shape test(SHAPE_T);
+    Player gracz(test);
     test.PrintShape();
     while (true)
     {
         system("stty raw"); // setting terminal to raw mode
-        int c = getchar();
-        system("stty cooked");
-        if (c == (int)'w')
+        int c = getch();
+        system("stty cooked"); // setting terminal to a person during a math exam mode
+        if (c == (int)'w' && MoveDownPlayer(gracz))
         {
             ClearConsole;
-            test.Rotate();
-            test.PrintShape();
+            gracz.Rotate();
+            gracz.PrintPlayer();
         }
-        if (TimePassed(1000))
+        if (c == (int)'a' && MoveDownPlayer(gracz))
         {
-            // ClearConsole;
-            // test.Rotate();
-            // test.PrintShape();            
+            ClearConsole;
+            gracz.MoveLeft();
+            gracz.PrintPlayer();
+        }
+        if (c == (int)'d' && MoveDownPlayer(gracz))
+        {
+            ClearConsole;
+            gracz.MoveRight();
+            gracz.PrintPlayer();
         }
     }
-
-
     return 0;
 }
