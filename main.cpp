@@ -3,8 +3,8 @@
 #include <chrono>
 #include <thread>
 
-#define ClearConsole system("clear")// clear the console
-
+#define ClearConsole    system("clear")// clear the console
+#define Wait(x)          this_thread::sleep_for(chrono::milliseconds(x)) // waits for 1000 ms
 using namespace std;
 
 int main()
@@ -12,12 +12,14 @@ int main()
     ClearConsole;
     Shape test(ZIGZAG);
     test.PrintShape();
-    cout << "\n";
-    this_thread::sleep_for(chrono::milliseconds(1000)); // waits for 1000 ms
-    ClearConsole;
-    test.Rotate();
-    test.PrintShape();
-    cout << "\n";
+    while (true)
+    {
+        Wait(1000);
+        ClearConsole;
+        test.Rotate();
+        test.PrintShape();
+    }
+
 
     return 0;
 }
