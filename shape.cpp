@@ -125,7 +125,14 @@ void Shape::PrintShape()
     {
         for (int j =0; j < 4; j++)
         {
-            cout << CurrPattern[i][j];
+            if (CurrPattern[i][j] == '*')
+            {
+                cout << "██";
+            }
+            else
+            {
+                cout << "  ";
+            }
         }
         cout << endl;
     }
