@@ -7,12 +7,16 @@ enum
     SHAPE_L,    // an L shaped like the letter 'L'
     ZIGZAG      // a zigzag (hard to explan if you haven't played tetris)
 };
-
+struct Position
+{
+    int x;
+    int y;
+};
 class Shape
 {
 private:
-
-    char pattern[4][4];
+    Position charPos[4];
+    char CurrPattern[4][4];
     void Straight_Shape();
     void Square_Shape();
     void Letter_T_Shape();
@@ -24,8 +28,7 @@ public:
 
     Shape();
     Shape(int type);
-    Shape(char shape[4][4]);
 
     void PrintShape();
-
+    void Rotate();
 };

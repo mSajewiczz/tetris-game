@@ -1,0 +1,3 @@
+/home/Wiktor/Programs/c++/tetris-game/tetris-game/build/CMakeFiles/tetris_game.dir
+/home/Wiktor/Programs/c++/tetris-game/tetris-game/build/CMakeFiles/edit_cache.dir
+/home/Wiktor/Programs/c++/tetris-game/tetris-game/build/CMakeFiles/rebuild_cache.dir
