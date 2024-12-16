@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/Wiktor/Programs/c++/tetris-game/tetris-game/build",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/tetris_game.dir/main.cpp.o -c /home/Wiktor/Programs/c++/tetris-game/tetris-game/main.cpp",
+  "file": "/home/Wiktor/Programs/c++/tetris-game/tetris-game/main.cpp",
+  "output": "CMakeFiles/tetris_game.dir/main.cpp.o"
+}
+]
