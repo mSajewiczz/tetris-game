@@ -71,7 +71,5 @@ int main()
             gracz.PrintPlayer();
         }
     }
-
-
     return 0;
 }
