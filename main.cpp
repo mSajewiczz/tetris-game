@@ -4,6 +4,8 @@
 
 #include "shape.h"
 #include "player.h"
+#include "border.h"
+
 #define ClearConsole    system("clear")// clear the console
 #define Wait(x)         this_thread::sleep_for(chrono::milliseconds(x)) // waits for 1000 ms
 #define Now             system_clock::now()
@@ -45,6 +47,9 @@ int main()
     Shape test(SHAPE_T);
     Player gracz(test);
     test.PrintShape();
+    Border border;
+    border.PrintBorder();
+
 
     while (true)
     {

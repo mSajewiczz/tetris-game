@@ -30,8 +30,16 @@ void Border::PrintBorder()
     {
         for(int j = 0; j < 10; j++)
         {
-            cout << board[i][j];
+            if(board[i][j] == '-')
+            {
+                cout << "——";
+            } else
+            {
+                cout << board[i][j];
+            }
         }
         cout << endl;
     }
-}
+} // tablica jest cały czas zmieniana -> cały czas zwracasz nową tablicę z aktualnym stanem klcków itd.
+/* to co zapisujemy do tablicy[][] to '-', '|', ' ' i '*' gdzie te pierwsze 2 to elementy bordera,
+ * to inaczej oznaczenie pojedynsczego bloku shape, a spacja to puste miejsce. */
