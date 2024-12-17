@@ -7,7 +7,6 @@ Border::Border() // klasa Border wywołuje konstruktor Border
     //a tu definiujesz co ma zrobic Border().
     for(int i = 0; i < 20; i++)
     {
-
         for(int j = 0; j < 10; j++)
         {
             if(i == 0 || i == 19)
@@ -22,5 +21,4 @@ Border::Border() // klasa Border wywołuje konstruktor Border
             }
         }
     }
-
 }
