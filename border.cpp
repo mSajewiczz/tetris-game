@@ -33,9 +33,15 @@ void Border::PrintBorder()
             if(board[i][j] == '-')
             {
                 cout << "——";
-            } else
+            } else if(board[i][j] == ' ')
             {
-                cout << board[i][j];
+                cout << "  ";
+            } else if(board[i][j] == '*')
+            {
+                cout << "██";
+            }else
+            {
+                cout << '|'; // albo board[i][j] zapis '|' jest czytelniejszy sigma
             }
         }
         cout << endl;
