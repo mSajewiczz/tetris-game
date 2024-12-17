@@ -1,3 +1,4 @@
+#include<iostream>
 #include "border.h"
 
 using namespace std;
@@ -20,5 +21,17 @@ Border::Border() // klasa Border wywołuje konstruktor Border
                 board[i][j] = ' ';
             }
         }
+    }
+}
+
+void Border::PrintBorder()
+{
+    for(int i = 0; i < 20; i++)
+    {
+        for(int j = 0; j < 10; j++)
+        {
+            cout << board[i][j];
+        }
+        cout << endl;
     }
 }

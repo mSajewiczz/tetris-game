@@ -9,4 +9,5 @@ private:
 public:
     Player curr_player; // przyjmujesz player i automatycznie shape (grida).
     Border();
+    void PrintBorder();
 };

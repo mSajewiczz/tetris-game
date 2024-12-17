@@ -45,6 +45,7 @@ int main()
     Shape test(SHAPE_T);
     Player gracz(test);
     test.PrintShape();
+
     while (true)
     {
         system("stty raw"); // setting terminal to raw mode
