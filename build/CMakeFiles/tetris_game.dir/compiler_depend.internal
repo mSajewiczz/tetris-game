@@ -3,6 +3,8 @@
 
 CMakeFiles/tetris_game.dir/main.cpp.o
  /home/Wiktor/Programs/c++/tetris-game/tetris-game/main.cpp
+ /home/Wiktor/Programs/c++/tetris-game/tetris-game/border.h
+ /home/Wiktor/Programs/c++/tetris-game/tetris-game/player.h
  /home/Wiktor/Programs/c++/tetris-game/tetris-game/shape.h
  /usr/include/alloca.h
  /usr/include/asm-generic/errno-base.h

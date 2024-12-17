@@ -142,10 +142,9 @@ CMakeFiles/tetris_game.dir/main.cpp.o: \
  /usr/include/c++/14.2.1/bits/locale_facets.tcc \
  /usr/include/c++/14.2.1/bits/basic_ios.tcc \
  /usr/include/c++/14.2.1/bits/ostream.tcc /usr/include/c++/14.2.1/istream \
- /usr/include/c++/14.2.1/bits/istream.tcc \
- /home/Wiktor/Programs/c++/tetris-game/tetris-game/shape.h \
- /usr/include/c++/14.2.1/chrono /usr/include/c++/14.2.1/bits/chrono.h \
- /usr/include/c++/14.2.1/ratio /usr/include/c++/14.2.1/cstdint \
+ /usr/include/c++/14.2.1/bits/istream.tcc /usr/include/c++/14.2.1/chrono \
+ /usr/include/c++/14.2.1/bits/chrono.h /usr/include/c++/14.2.1/ratio \
+ /usr/include/c++/14.2.1/cstdint \
  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h /usr/include/c++/14.2.1/limits \
@@ -209,4 +208,7 @@ CMakeFiles/tetris_game.dir/main.cpp.o: \
  /usr/include/c++/14.2.1/bits/semaphore_base.h \
  /usr/include/c++/14.2.1/bits/atomic_timed_wait.h \
  /usr/include/c++/14.2.1/bits/this_thread_sleep.h /usr/include/sys/time.h \
- /usr/include/semaphore.h /usr/include/bits/semaphore.h
+ /usr/include/semaphore.h /usr/include/bits/semaphore.h \
+ /home/Wiktor/Programs/c++/tetris-game/tetris-game/shape.h \
+ /home/Wiktor/Programs/c++/tetris-game/tetris-game/player.h \
+ /home/Wiktor/Programs/c++/tetris-game/tetris-game/border.h
