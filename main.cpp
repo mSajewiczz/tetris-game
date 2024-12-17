@@ -1,7 +1,6 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include <ncurses.h>
 
 #include "shape.h"
 #include "player.h"
@@ -15,9 +14,9 @@ using namespace std::chrono;
 independent of everything else (in a sense of course)*/
 
 
-bool TimePassed(long int time) 
+bool TimePassed(long int time)
 {
-    static auto start = Now;
+    static auto start = Now; //zapisuje sie do kazdego nowego wywolania funkcji
 
     auto now = Now;
     long int duration = duration_cast<milliseconds>(now - start).count();
@@ -49,7 +48,7 @@ int main()
     while (true)
     {
         system("stty raw"); // setting terminal to raw mode
-        int c = getch();
+        int c = getchar();
         system("stty cooked"); // setting terminal to a person during a math exam mode
         if (c == (int)'w' && MoveDownPlayer(gracz))
         {

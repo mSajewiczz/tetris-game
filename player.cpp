@@ -21,7 +21,7 @@ bool Player::CanFall()
 }
 bool Player::CanMoveLeft()
 {
-    if (PlayerPosition.x == 0 && PlayerPosition.y == 0)
+    if (PlayerPosition.x == 0)
     {
         return false;
     }
