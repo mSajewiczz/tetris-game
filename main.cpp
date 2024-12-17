@@ -1,10 +1,12 @@
 #include <iostream>
 #include <chrono>
-#include <thread>
+#include <termios.h>
+#include <unistd.h>
 
 #include "shape.h"
 #include "player.h"
 #include "border.h"
+#include "ignoredInput.h"
 
 #define ClearConsole    system("clear")// clear the console
 #define Wait(x)         this_thread::sleep_for(chrono::milliseconds(x)) // waits for 1000 ms
@@ -12,13 +14,20 @@
 
 using namespace std;
 using namespace std::chrono;
-/* check if the set time hasalready passed to make the moving down actually 
+/* check if the set time has already passed to make the moving down actually 
 independent of everything else (in a sense of course)*/
 
 
 bool TimePassed(long int time)
 {
-    static auto start = Now; //zapisuje sie do kazdego nowego wywolania funkcji
+    static auto start = Now;
+    static bool firstCall = true;
+
+    if (firstCall)
+    {
+        start = Now;
+        firstCall = false;
+    }
 
     auto now = Now;
     long int duration = duration_cast<milliseconds>(now - start).count();
@@ -30,7 +39,7 @@ bool TimePassed(long int time)
     return false;
 }
 
-bool MoveDownPlayer(Player &gracz)
+void MoveDownPlayer(Player &gracz)
 {
     if (TimePassed(1000))
     {
@@ -38,8 +47,8 @@ bool MoveDownPlayer(Player &gracz)
         gracz.Fall();
         gracz.PrintPlayer();
     }
-    return true;
 }
+
 int main()
 {
     system("tput civis"); // makes the cursor invisible so it won't interfere with the game looks
@@ -47,33 +56,40 @@ int main()
     Shape test(SHAPE_T);
     Player gracz(test);
     test.PrintShape();
-    Border border;
-    border.PrintBorder();
-
-
+    nonblock(NB_ENABLE);
+    int i = 0;
     while (true)
     {
         system("stty raw"); // setting terminal to raw mode
-        int c = getchar();
-        system("stty cooked"); // setting terminal to a person during a math exam mode
-        if (c == (int)'w' && MoveDownPlayer(gracz))
+        i = kbhit();
+        system("stty cooked");
+        if (i != 0)
         {
-            ClearConsole;
-            gracz.Rotate();
-            gracz.PrintPlayer();
+            int c = fgetc(stdin);
+            if (c == (int)'w')
+            {
+                ClearConsole;
+                gracz.Rotate();
+                gracz.PrintPlayer();
+            }
+            if (c == (int)'a')
+            {
+                ClearConsole;
+                gracz.MoveLeft();
+                gracz.PrintPlayer();
+            }
+            if (c == (int)'d')
+            {
+                ClearConsole;
+                gracz.MoveRight();
+                gracz.PrintPlayer();
+            }
+            i = 0;
         }
-        if (c == (int)'a' && MoveDownPlayer(gracz))
-        {
-            ClearConsole;
-            gracz.MoveLeft();
-            gracz.PrintPlayer();
-        }
-        if (c == (int)'d' && MoveDownPlayer(gracz))
-        {
-            ClearConsole;
-            gracz.MoveRight();
-            gracz.PrintPlayer();
-        }
+        MoveDownPlayer(gracz);
+
+        
     }
+    nonblock(NB_DISABLE);
     return 0;
 }
