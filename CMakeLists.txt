@@ -3,4 +3,6 @@ project(tetris_game)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(tetris_game main.cpp)
+add_executable(tetris_game main.cpp
+        border.cpp
+        border.h)

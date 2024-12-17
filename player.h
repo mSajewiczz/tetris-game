@@ -13,7 +13,7 @@ private:
     bool CanMoveRight();
 public:
     Player();
-    Player(Shape NewShape);
+    Player(Shape NewShape); //2 rózne konstruktory
     void MoveLeft();
     void MoveRight();
     void Fall();
