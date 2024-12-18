@@ -129,6 +129,30 @@ tetris_game/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris_game.dir/build.make CMakeFiles/tetris_game.dir/build
 .PHONY : tetris_game/fast
 
+border.o: border.cpp.o
+.PHONY : border.o
+
+# target to build an object file
+border.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris_game.dir/build.make CMakeFiles/tetris_game.dir/border.cpp.o
+.PHONY : border.cpp.o
+
+border.i: border.cpp.i
+.PHONY : border.i
+
+# target to preprocess a source file
+border.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris_game.dir/build.make CMakeFiles/tetris_game.dir/border.cpp.i
+.PHONY : border.cpp.i
+
+border.s: border.cpp.s
+.PHONY : border.s
+
+# target to generate assembly for a file
+border.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetris_game.dir/build.make CMakeFiles/tetris_game.dir/border.cpp.s
+.PHONY : border.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tetris_game"
+	@echo "... border.o"
+	@echo "... border.i"
+	@echo "... border.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,1 +1,1 @@
-/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/tetris_game.dir/link.d CMakeFiles/tetris_game.dir/main.cpp.o -o tetris_game
+/usr/bin/c++ -g -Wl,--dependency-file=CMakeFiles/tetris_game.dir/link.d CMakeFiles/tetris_game.dir/main.cpp.o CMakeFiles/tetris_game.dir/border.cpp.o -o tetris_game

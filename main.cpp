@@ -56,40 +56,30 @@ int main()
     Shape test(SHAPE_T);
     Player gracz(test);
     test.PrintShape();
-    nonblock(NB_ENABLE);
-    int i = 0;
+    CanonicalMode(ENABLE);
     while (true)
     {
-        system("stty raw"); // setting terminal to raw mode
-        i = kbhit();
-        system("stty cooked");
-        if (i != 0)
-        {
-            int c = fgetc(stdin);
-            if (c == (int)'w')
+        char c = getccin();
+            if (c == 'w')
             {
                 ClearConsole;
                 gracz.Rotate();
                 gracz.PrintPlayer();
             }
-            if (c == (int)'a')
+            if (c == 'a')
             {
                 ClearConsole;
                 gracz.MoveLeft();
                 gracz.PrintPlayer();
             }
-            if (c == (int)'d')
+            if (c == 'd')
             {
                 ClearConsole;
                 gracz.MoveRight();
                 gracz.PrintPlayer();
             }
-            i = 0;
-        }
         MoveDownPlayer(gracz);
-
-        
     }
-    nonblock(NB_DISABLE);
+    CanonicalMode(DISABLE);
     return 0;
 }

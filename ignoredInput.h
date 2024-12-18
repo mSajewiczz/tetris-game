@@ -1,7 +1,7 @@
 #pragma once
 
-#define NB_ENABLE 1
-#define NB_DISABLE 0
+#define ENABLE 1
+#define DISABLE 0
 
-int kbhit();                // i dont really know how bot of them work but im yet to discover that
-void nonblock(int state);   // same here
+void CanonicalMode(int state);      // enables / disables the canonical mode in terminal
+char getccin();                     // this name stands for get console char input

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/Wiktor/Programs/c++/tetris-game/tetris-game/border.cpp" "CMakeFiles/tetris_game.dir/border.cpp.o" "gcc" "CMakeFiles/tetris_game.dir/border.cpp.o.d"
   "/home/Wiktor/Programs/c++/tetris-game/tetris-game/main.cpp" "CMakeFiles/tetris_game.dir/main.cpp.o" "gcc" "CMakeFiles/tetris_game.dir/main.cpp.o.d"
   "" "tetris_game" "gcc" "CMakeFiles/tetris_game.dir/link.d"
   )

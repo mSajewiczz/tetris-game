@@ -5,7 +5,7 @@
 #include <chrono>
 #include <iostream>
 
-int kbhit()
+int AnyButtonDown()
 {
     struct timeval tv;
     fd_set fds;
@@ -16,26 +16,28 @@ int kbhit()
     select(STDIN_FILENO+1, &fds, NULL, NULL, &tv);
     return FD_ISSET(STDIN_FILENO, &fds);
 }
-void nonblock(int state)
+void CanonicalMode(int state)
 {
-    struct termios ttystate;
-
-    //get the terminal state
-    tcgetattr(STDIN_FILENO, &ttystate);
-
-    if (state == NB_ENABLE)
+    struct termios terminalState;
+    tcgetattr(STDIN_FILENO, &terminalState);//get the terminal state
+    if (state == ENABLE)
     {
-        //turn off canonical mode
-        ttystate.c_lflag &= ~ICANON;
-        //minimum of number input read.
-        ttystate.c_cc[VMIN] = 1;
+        terminalState.c_lflag &= (tcflag_t)(~ICANON);//turn off canonical mode   
+        terminalState.c_cc[VMIN] = 1;//minimum number of characters in input to read
     }
-    else if (state == NB_DISABLE)
+    else if (state == DISABLE)
     {
-        //turn on canonical mode
-        ttystate.c_lflag |= ICANON;
+        terminalState.c_lflag |= ICANON;//turn on canonical mode
     }
-    //set the terminal attributes.
-    tcsetattr(STDIN_FILENO, TCSANOW, &ttystate);
 
+    tcsetattr(STDIN_FILENO, TCSANOW, &terminalState);//set the terminal attributes
+}
+char getccin()
+{
+    int i = AnyButtonDown();
+    if (i == 0)
+    {
+        return 0;
+    }
+    return fgetc(stdin);
 }
