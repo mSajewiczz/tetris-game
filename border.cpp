@@ -24,6 +24,12 @@ Border::Border() // klasa Border wywołuje konstruktor Border
     }
 }
 
+void Border::AddPlayer(Player AddPlayer)
+{
+    Border();
+}
+
+
 void Border::PrintBorder()
 {
     for(int i = 0; i < 20; i++)
