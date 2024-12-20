@@ -56,7 +56,6 @@ int main()
     Shape test(SHAPE_T);
     Player gracz(test);
     test.PrintShape();
-    CanonicalMode(ENABLE);
     while (true)
     {
         char c = getccin();
@@ -80,6 +79,5 @@ int main()
             }
         MoveDownPlayer(gracz);
     }
-    CanonicalMode(DISABLE);
     return 0;
 }

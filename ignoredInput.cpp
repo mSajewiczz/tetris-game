@@ -20,12 +20,12 @@ void CanonicalMode(int state)
 {
     struct termios terminalState;
     tcgetattr(STDIN_FILENO, &terminalState);//get the terminal state
-    if (state == ENABLE)
+    if (state == DISABLE)
     {
         terminalState.c_lflag &= (tcflag_t)(~ICANON);//turn off canonical mode   
         terminalState.c_cc[VMIN] = 1;//minimum number of characters in input to read
     }
-    else if (state == DISABLE)
+    else if (state == ENABLE)
     {
         terminalState.c_lflag |= ICANON;//turn on canonical mode
     }
@@ -34,10 +34,12 @@ void CanonicalMode(int state)
 }
 char getccin()
 {
+    CanonicalMode(DISABLE);
     int i = AnyButtonDown();
     if (i == 0)
     {
         return 0;
     }
+    CanonicalMode(ENABLE);
     return fgetc(stdin);
 }
